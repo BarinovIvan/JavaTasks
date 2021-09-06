@@ -1,4 +1,4 @@
-package Practise2;
+package Practise1;
 
 public class Ball {
     private String type;
