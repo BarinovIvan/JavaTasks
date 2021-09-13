@@ -1,8 +1,10 @@
  package Practise3;
 
     public class Rectangle extends Shape {
-        priotected double width;
-        priotected double length;
+        protected
+         double width;
+        protected
+         double length;
 
         public Rectangle() {
         }
@@ -40,7 +42,7 @@
         }
         @Override
         public double getPerimeter() {
-            return (width+Perimeter)*2;
+            return (width+length)*2;
 
         }
 
