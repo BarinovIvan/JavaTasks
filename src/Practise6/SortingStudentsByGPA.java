@@ -13,6 +13,8 @@ public class SortingStudentsByGPA extends Student {
             students[2] = new Student(1, 221);
             students[3] = new Student(666, 290);
             students[4] = new Student(777, 255);
+            String[] strs = {"sdfds","sdfsdf","aaaa"};
+            int[] x = {3434,5,2,1,-9999};
             Arrays.sort(students, scomp);
             for (int i = 0; i < 5; i++) {
                 System.out.println(students[i].getiD() + " " + students[i].getGPA());
