@@ -1,16 +1,18 @@
-package Practise6;
+package Practise6.test;
 
 import java.util.Arrays;
 import java.util.Comparator;
 
 
 public class SortingStudentsByGPA extends Student {
-    public static void main(String[] args) {
+
+
+ public static void main(String[] args) {
         Student[] students = new Student[5];
             Comparator<Student> scomp = new StudentGPAComparator();
             students[0] = new Student(64352, 245);
             students[1] = new Student(5234, 223);
-            students[2] = new Student(1, 221);
+            students[2] = new Student(1, 222);
             students[3] = new Student(666, 290);
             students[4] = new Student(777, 255);
             String[] strs = {"sdfds","sdfsdf","aaaa"};

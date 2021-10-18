@@ -1,4 +1,4 @@
-package Practise6;
+package Practise6.test;
 
 import java.util.Arrays;
 

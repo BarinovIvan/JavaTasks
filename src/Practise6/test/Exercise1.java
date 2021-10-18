@@ -1,4 +1,4 @@
-package Practise6;
+package Practise6.test;
 
 public class Exercise1 {
     public static void selectionSort(int[] arr){

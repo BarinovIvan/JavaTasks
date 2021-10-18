@@ -1,4 +1,4 @@
-package Practise6;
+package Practise6.test;
 import java.util.Arrays;
 public class Student {
     private int iD;
@@ -9,7 +9,7 @@ public class Student {
         this.GPA=GPA;
     }
 
-    public Student() {
+    public Student(int i, int gpa, String fio) {
 
     }
 
@@ -23,6 +23,9 @@ public class Student {
 
     public int getGPA() {
         return GPA;
+    }
+
+    public Student() {
     }
 
     public void setGPA(int GPA) {
