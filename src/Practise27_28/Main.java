@@ -1,12 +1,16 @@
 package Practise27_28;
 
+import org.apache.commons.io.FileUtils;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+
 
 public class Main implements Runnable {
     public static void main(String[] args) {
@@ -30,10 +34,13 @@ public class Main implements Runnable {
 
     private void resize(int i) {
         int cores =Runtime.getRuntime().availableProcessors();
-        String srcFolder = "src/Practise27_28/images";
-        String dstFolder = "src/Practise27_28/new_images";
+        String source = "src/Practise27_28/images";
+        String dest = "src/Practise27_28/new_images";
 
-        File srcDir = new File(srcFolder);
+        File srcSource = new File("src/123");
+        File srcDest = new File("src/Practise27_28/new_images");
+
+        File srcDir = new File(source);
 
         long start = System.currentTimeMillis();
 
@@ -41,8 +48,8 @@ public class Main implements Runnable {
         assert files != null;
         cores=files.length/cores;
         try {
-            if (!Files.exists(Paths.get(dstFolder))) {
-                Files.createDirectories(Paths.get(dstFolder));
+            if (!Files.exists(Paths.get(dest))) {
+                Files.createDirectories(Paths.get(dest));
             }
             for (int l=i;l<cores*(i+1);l++) {
                 File file = files[l];
@@ -69,13 +76,17 @@ public class Main implements Runnable {
                     }
                 }
 
-                File newFile = new File(dstFolder + "/" + file.getName());
+                File newFile = new File(dest + "/" + file.getName());
                 ImageIO.write(newImage, "jpg", newFile);
             }
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-
+        try {
+            FileUtils.copyDirectory(srcSource, srcDest);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         System.out.println("Время работы: " + (System.currentTimeMillis() - start));
     }
 }

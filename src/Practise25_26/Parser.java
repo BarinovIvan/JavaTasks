@@ -43,7 +43,7 @@ public class Parser {
     }
 
     public void saveJSON(String json) {
-        try(FileWriter writer = new FileWriter("src/Practise25_26", false)) {
+        try(FileWriter writer = new FileWriter("src/Practise25_26/map.json", false)) {
             writer.write(json);
             writer.flush();
         } catch (IOException e) {
@@ -51,7 +51,7 @@ public class Parser {
         }
     }
 
-    public void openJSON() {
+    public void openJSON() { //src/Practise25_26/map.json
         String json = "";
         try(FileReader reader = new FileReader("src/Practise25_26/map.json")) {
             // читаем посимвольно
